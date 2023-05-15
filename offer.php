@@ -11,9 +11,7 @@ include_once('config.php');
 
 <script type="text/javascript">
   function onNavigationLoaded(response){
-    console.log(response);
     if(response.body.next_step !== undefined && response.body.next_step !== null){
-      console.log('aaa');
       var redirectAt = moment.unix(response.body.next_step.at);
 
       var intervalId = setInterval( function(){
@@ -22,12 +20,14 @@ include_once('config.php');
           // countdown timer
           $('.countdown-days').text(moment.duration(redirectAt - now).days() );
           $('.countdown-time').text(moment.utc(redirectAt - now).format('HH時間mm分ss秒SS'));
+        } else {
+          window.location.href = response.body.next_step.url;
         }
       }, 10);
     }
   }
 </script>
 <!-- 以下の`example.ever.bz`と、`sales`を、適切なものに置き換えてください -->
-<script src="<?php echo $smartLinkApiUrl; ?>"></script>
+<script src="<?php echo $baseUrl; ?>/api/v1/my/smart_links/<?php echo $smartLinkSlug; ?>?callback=onNavigationLoaded"></script>
 </body>
 </html>

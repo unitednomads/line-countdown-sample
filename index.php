@@ -8,7 +8,7 @@ try {
   $date = DateTime::createFromFormat($format, $d, new DateTimeZone('Asia/Tokyo'));
   $opt = $date->getTimestamp();
 } catch (Throwable $e) {
-  header("Location: $smartLinkUrl");
+  header("Location: $baseUrl/$smartLinkSlug");
   exit;
 }
 
@@ -22,4 +22,4 @@ $jwtSignature = str_replace(['+', '/', '='], ['-', '_', ''], base64_encode($jwtS
 $jwt = $jwtHeader . "." . $jwtPayload . "." . $jwtSignature;
 
 // Redirect to the SmartLink
-header("Location: $smartLinkUrl?t3=$jwt");
+header("Location: $baseUrl/$smartLinkSlug?t3=$jwt");
