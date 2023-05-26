@@ -6,7 +6,7 @@
 `config.sample.php`をコピーして、`config.php`を設置してください。
 
 - `$jwtSecret`はEVERの「TimeTunerトークン」から取得します。
-- `$baseUrl`はご使用中のEVERのキャンペーンドメイン（FQDN）を指定します。
+- `$baseUrl`はご使用中のEVERのキャンペーンドメイン（FQDN）に、プロトコル（`https://`）をつけて指定します。
 - `$smartLinkSlug`は、スマートリンクのスラグに置き換えてください。
 
 ## 販売ページ設置URLの制限
