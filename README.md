@@ -6,8 +6,8 @@
 `config.sample.php`をコピーして、`config.php`を設置してください。
 
 - `$jwtSecret`はEVERの「TimeTunerトークン」から取得します。
-- `$smartLinkUrl`はEVERで販売ページ用に作成したスマートリンクを設定してください。
-- `$smartLinkApiUrl`は、キャンペーンURL（`https:example.ever.bz`）と、スラグ（`relative`の部分）だけを置き換えてください。
+- `$baseUrl`はご使用中のEVERのキャンペーンドメイン（FQDN）を指定します。
+- `$smartLinkSlug`は、スマートリンクのスラグに置き換えてください。
 
 ## 販売ページ設置URLの制限
 
